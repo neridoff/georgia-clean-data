@@ -53,5 +53,10 @@
   "time": "2026-10-30T17:00:00.000Z",
   "intensity": 126,
   "carbonFree": 78
+ },
+ {
+  "time": "2026-10-30T18:00:00.000Z",
+  "intensity": 129,
+  "carbonFree": 77.3
  }
 ]
