@@ -33,7 +33,7 @@
 
 - Ключ: только в Secrets репозитория (зашифрован, в логах скрыт) и в
   Keychain Scriptable на телефоне. В файлах его нет.
-- `history.json`: последние 48 часов, `[{ time, intensity, carbonFree }]`.
+- `history.json`: последние 60 дней, `[{ time, intensity, carbonFree }]`.
   Публичный, но это открытые данные о сети Грузии.
 
 ## Если что-то не так

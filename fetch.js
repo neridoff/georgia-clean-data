@@ -6,7 +6,7 @@ const fs = require("fs");
 
 const ZONE = "GE";
 const FILE = "history.json";
-const KEEP_HOURS = 48;
+const KEEP_HOURS = 60 * 24; // 60 days: enough for "typical day" stats
 
 function hourKey(date) {
   const d = new Date(date);
