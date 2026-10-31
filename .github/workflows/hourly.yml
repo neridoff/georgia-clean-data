@@ -2,7 +2,7 @@ name: Hourly reading
 
 on:
   schedule:
-    - cron: "7 * * * *"   # every hour at :07 UTC (:00 is GitHub's busiest minute)
+    - cron: "7,22,37,52 * * * *"   # every 15 min; the current hour keeps the latest value
   workflow_dispatch:       # "Run workflow" button for a manual run
 
 permissions:

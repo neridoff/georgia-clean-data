@@ -1,5 +1,6 @@
-// Runs every hour in GitHub Actions: reads the current carbon intensity
-// for zone GE and appends it to history.json (one reading per hour).
+// Runs every 15 minutes in GitHub Actions: reads the current carbon intensity
+// for zone GE into history.json (one reading per hour; the current hour is
+// overwritten with the latest value, fetchedAt says when it was taken).
 // The API key comes from the repository secret ELECTRICITYMAPS_TOKEN.
 
 const fs = require("fs");
@@ -27,8 +28,10 @@ async function main() {
   }
 
   const fossil = json.data.fossilFuelPercentage;
+  const now = new Date();
   const reading = {
-    time: hourKey(new Date()),
+    time: hourKey(now),
+    fetchedAt: now.toISOString(),
     intensity: json.data.carbonIntensity,
     carbonFree: typeof fossil === "number" ? Math.round((100 - fossil) * 10) / 10 : null,
   };
