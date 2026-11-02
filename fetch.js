@@ -27,11 +27,12 @@ async function main() {
     throw new Error(`HTTP ${res.status}: ${JSON.stringify(json).slice(0, 200)}`);
   }
 
-  console.log(`API: ${JSON.stringify(json)}`);
   const fossil = json.data.fossilFuelPercentage;
   const now = new Date();
   const reading = {
-    time: hourKey(now),
+    // data.datetime: the hour the value belongs to. Early in an hour the API
+    // still returns the previous one; filing it under the fetch hour left gaps.
+    time: hourKey(json.data.datetime || now),
     fetchedAt: now.toISOString(),
     intensity: json.data.carbonIntensity,
     carbonFree: typeof fossil === "number" ? Math.round((100 - fossil) * 10) / 10 : null,
