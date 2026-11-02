@@ -27,6 +27,7 @@ async function main() {
     throw new Error(`HTTP ${res.status}: ${JSON.stringify(json).slice(0, 200)}`);
   }
 
+  console.log(`API: ${JSON.stringify(json)}`);
   const fossil = json.data.fossilFuelPercentage;
   const now = new Date();
   const reading = {
