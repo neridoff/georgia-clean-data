@@ -920,5 +920,11 @@
   "fetchedAt": "2026-11-06T02:12:32.622Z",
   "intensity": 77,
   "carbonFree": 88.7
+ },
+ {
+  "time": "2026-11-06T03:00:00.000Z",
+  "fetchedAt": "2026-11-06T03:10:20.959Z",
+  "intensity": 84,
+  "carbonFree": 87.1
  }
 ]
